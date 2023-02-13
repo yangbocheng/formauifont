@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="todomaui.Views.TodoListPage"
+             xmlns:vm="clr-namespace:todomaui.ViewModels"
+             Title="TodoListPage" BackgroundColor="#F7F7F7"
+             >
+    <ContentPage.BindingContext>
+        <vm:TodoListPageVM></vm:TodoListPageVM>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{FontImage FontFamily='f6', Glyph='&#x2b;', Color=White, Size=22}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <ListView ItemsSource="{Binding List}" SeparatorVisibility="None" RowHeight="100"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Border Margin="10,10,10,0" Padding="10" BackgroundColor="White" StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10"></RoundRectangle>
+                            </Border.StrokeShape>
+                            <VerticalStackLayout>
+                                <Label >
+                                    <Label.FormattedText>
+                                        <FormattedString >
+                                            <Span Text="{Binding Title}"></Span>
+                                            <Span Text="{Binding CreateTime}"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Text="{Binding Content}"></Label>
+                                <Label Text="1"></Label>
+                            </VerticalStackLayout>
+                        </Border>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Button Text="&#x2b;" FontFamily="f6" TextColor="White" FontSize="22"
+                    CornerRadius="25" 
+                    HeightRequest="50"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Command="{Binding toEditCommand}"
+                Margin="0,0,20,100"
+                    WidthRequest="50">
+            <Button.Shadow>
+                <Shadow></Shadow>
+            </Button.Shadow>
+        </Button>
+
+
+    </Grid>
+</ContentPage>

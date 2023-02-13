@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="todomaui.Views.TodoOnePage"
+             xmlns:convert="clr-namespace:todomaui.Convert"
+             xmlns:vm="clr-namespace:todomaui.ViewModels.TodoListPage"
+             Title="{Binding EditEnum,Converter={x:Static convert:EditEnum2str.Instance}}"
+             Shell.TabBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:TodoOneVM></vm:TodoOneVM>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{FontImage FontFamily='f6', Glyph='&#xf00c;', Color=White, Size=22}"
+                     Command="{Binding onSaveCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <Label Text="标题"></Label>
+        <Entry Placeholder="请输入标题" Text="{Binding Title}"></Entry>
+        <Label Text="内容"></Label>
+        <Editor Placeholder="请输入内容" Text="{Binding Content}" MinimumHeightRequest="280">
+        </Editor>
+    </VerticalStackLayout>
+</ContentPage>
