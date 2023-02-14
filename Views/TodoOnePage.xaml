@@ -4,7 +4,7 @@
              x:Class="todomaui.Views.TodoOnePage"
              xmlns:convert="clr-namespace:todomaui.Convert"
              xmlns:vm="clr-namespace:todomaui.ViewModels.TodoListPage"
-             Title="{Binding EditEnum,Converter={x:Static convert:EditEnum2str.Instance}}"
+             Title="{Binding EditEnum}"
              Shell.TabBarIsVisible="False">
     <ContentPage.BindingContext>
         <vm:TodoOneVM></vm:TodoOneVM>

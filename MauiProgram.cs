@@ -1,5 +1,6 @@
-﻿using CommunityToolkit.Maui;
-using CommunityToolkit.Maui.Storage;
+﻿//using CommunityToolkit.Maui;
+//using CommunityToolkit.Maui.Storage;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using todomaui.Common;
 using todomaui.ViewModels;
@@ -14,12 +15,12 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-			.UseMauiCommunityToolkit()
+			//.UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-				fonts.AddFont("Font Awesome 6 Free-Solid-900", "f6");
+				fonts.AddFont("Font Awesome 6 Free-Solid-900.otf", "f6");
 			});
 
 		registerViewAndVM(builder.Services);
@@ -36,14 +37,15 @@ public static class MauiProgram
 
 	private static void registerViewAndVM(in IServiceCollection services)
 	{
-        services.AddTransient<TodoListPage, TodoListPageVM>();
+		services.AddTransient<TodoListPage>().AddTransient<TodoListPageVM>();
+        //services.AddTransient<TodoListPage, TodoListPageVM>();
 	}
 
     static void RegisterEssentials(in IServiceCollection services)
     {
         services.AddSingleton<IDeviceInfo>(DeviceInfo.Current);
         services.AddSingleton<IDeviceDisplay>(DeviceDisplay.Current);
-        services.AddSingleton<IFileSaver>(FileSaver.Default);
-        services.AddSingleton<IFolderPicker>(FolderPicker.Default);
+        //services.AddSingleton<IFileSaver>(FileSaver.Default);
+        //services.AddSingleton<IFolderPicker>(FolderPicker.Default);
     }
 }
