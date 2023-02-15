@@ -49,9 +49,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Fonts\Font Awesome 6 Brands-Regular-400.otf" />
-	  <None Remove="Resources\Fonts\Font Awesome 6 Free-Regular-400.otf" />
-	  <None Remove="Resources\Fonts\Font Awesome 6 Free-Solid-900.otf" />
+	  <None Remove="Resources\Fonts\f6br4.otf" />
+	  <None Remove="Resources\Fonts\f6fr4.otf" />
+	  <None Remove="Resources\Fonts\f6fs9.otf" />
 	</ItemGroup>
 
 	<ItemGroup>
