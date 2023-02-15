@@ -18,8 +18,8 @@ public static class MauiProgram
 			//.UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
 			{
-				fonts.AddFont("opensan_regular", "OpenSansRegular");
-				fonts.AddFont("opensan_semibold", "OpenSansSemibold");
+				fonts.AddFont("opensan_regular.ttf", "OpenSansRegular");
+				fonts.AddFont("opensan_semibold.ttf", "OpenSansSemibold");
 				fonts.AddFont("f6fs9.otf", "f6");
 			});
 

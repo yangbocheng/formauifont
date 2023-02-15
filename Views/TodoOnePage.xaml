@@ -16,10 +16,10 @@
     <ContentPage.Resources>
     </ContentPage.Resources>
     <VerticalStackLayout>
-        <Label Text="标题"></Label>
-        <Entry Placeholder="请输入标题" Text="{Binding Title}"></Entry>
-        <Label Text="内容"></Label>
-        <Editor Placeholder="请输入内容" Text="{Binding Content}" MinimumHeightRequest="280">
+        <Label Text="title"></Label>
+        <Entry Placeholder="please enter your title" Text="{Binding Title}"></Entry>
+        <Label Text="content"></Label>
+        <Editor Placeholder="please enter content" Text="{Binding Content}" MinimumHeightRequest="280">
         </Editor>
     </VerticalStackLayout>
 </ContentPage>
